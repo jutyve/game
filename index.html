@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+var droplet = document.createElement('img');
+droplet.src = 'https://hotemoji.com/images/dl/f/droplet-emoji-by-google.png';
+droplet.style.width = '100px';
+document.body.appendChild(droplet);
+
+droplet.style.width = '50px';
+
+droplet.style.position = 'absolute';
+droplet.style.top = '50%';
+droplet.style.left = '50%';
+droplet.style.transform = 'translate(-50%, -50%)';
+
+var button = document.createElement('button');
+button.innerHTML = 'Jump';
+document.body.appendChild(button);
+button.onclick = function() {
+  droplet.style.top = Math.random() * 100 + '%';
+  droplet.style.left = Math.random() * 100 + '%';
+};
+
+document.body.removeChild(button);
+
+var counter = document.createElement('div');
+counter.innerHTML = '0';
+document.body.appendChild(counter);
+
+droplet.onclick = function() {
+  counter.innerHTML = parseInt(counter.innerHTML) + 1;
+};
+
+droplet.onclick = function() {
+  droplet.style.top = Math.random() * 100 + '%';
+  droplet.style.left = Math.random() * 100 + '%';
+  counter.innerHTML = parseInt(counter.innerHTML) + 1;
+};
+
+counter.style.position = 'absolute';
+counter.style.top = '0';
+counter.style.left = '0';
+counter.style.fontSize = '50px';
+counter.style.fontFamily = 'sans-serif';
+counter.style.fontWeight = 'bold';
+counter.style.color = '#fff';
+counter.style.backgroundColor = '#000';
+counter.style.padding = '10px';
+counter.style.borderRadius = '10px';
+
+document.onkeypress = function(e) {
+  if (e.key === 'r') {
+    counter.innerHTML = '0';
+  }
+};
+});
+        </script>
+    </head>
+    <body style="margin: 0;">
+    </body>
+</html>
